@@ -1,0 +1,87 @@
+{% extends "portafolio/base.html" %}
+
+{% block contenido %}
+
+<section class="hero">
+    <div>
+        <p class="etiqueta">Informática · Desarrollo · Aprendizaje</p>
+
+        <h1>
+            Ideas que se convierten en
+            <span>soluciones.</span>
+        </h1>
+
+        <p class="presentacion">Hola, soy {{ nombre }}.</p>
+
+        <p class="descripcion">
+            Estudio el Técnico Universitario en Informática.
+            Tengo experiencia en programación, aplicaciones,
+            páginas web y bases de datos SQL Server.
+        </p>
+
+        <p class="descripcion">
+            También realizo instalaciones de cámaras de seguridad
+            y mantenimiento de equipos de cómputo.
+        </p>
+
+        <div class="acciones">
+            <a class="boton" href="{% url 'portafolio:proyectos' %}">
+                Ver mis proyectos ↗
+            </a>
+
+            <a
+                class="boton secundario"
+                href="{% url 'portafolio:contacto' %}"
+            >
+                Contactarme
+            </a>
+        </div>
+    </div>
+
+    <aside class="perfil" aria-label="Perfil de César Tomás">
+        <p class="etiqueta">Mi perfil</p>
+
+        <div class="iniciales" aria-hidden="true">CT</div>
+
+        <div class="perfil-info">
+            <strong>{{ nombre }}</strong>
+            <p>Informática en formación</p>
+        </div>
+    </aside>
+</section>
+
+<section class="seccion">
+    <h2>Lo que puedo aportar</h2>
+    <p>Conocimientos que continúo fortaleciendo con la práctica.</p>
+
+    <div class="tarjetas">
+        <article class="tarjeta">
+            <span class="numero">01 / DESARROLLO</span>
+            <h3>Programación y web</h3>
+            <p>
+                Experiencia trabajando en aplicaciones,
+                páginas web y ejercicios de programación.
+            </p>
+        </article>
+
+        <article class="tarjeta">
+            <span class="numero">02 / DATOS</span>
+            <h3>Bases de datos</h3>
+            <p>
+                Experiencia trabajando con SQL Server
+                como parte de mis conocimientos en informática.
+            </p>
+        </article>
+
+        <article class="tarjeta">
+            <span class="numero">03 / SOPORTE</span>
+            <h3>Equipos y cámaras</h3>
+            <p>
+                Limpieza y configuración de computadoras,
+                además de instalación de cámaras de seguridad.
+            </p>
+        </article>
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,192 @@
+{% extends "portafolio/base.html" %}
+{% load static %}
+
+{% block contenido %}
+
+<p class="etiqueta">Mi trabajo</p>
+<h1>{{ titulo }}</h1>
+<p>{{ presentacion }}</p>
+
+
+<div class="filtros" role="group" aria-label="Filtrar proyectos">
+    <button
+        type="button"
+        class="filtro-proyecto"
+        data-filtro="todos"
+        aria-pressed="true"
+    >
+        Todos
+    </button>
+
+    <button
+        type="button"
+        class="filtro-proyecto"
+        data-filtro="datos"
+        aria-pressed="false"
+    >
+        Consulta de datos
+    </button>
+
+    <button
+        type="button"
+        class="filtro-proyecto"
+        data-filtro="educativo"
+        aria-pressed="false"
+    >
+        Educativo
+    </button>
+
+    <button
+        type="button"
+        class="filtro-proyecto"
+        data-filtro="juegos"
+        aria-pressed="false"
+    >
+        Juegos
+    </button>
+</div>
+
+<p id="resultado-filtro" class="resultado-filtro" role="status">
+    Mostrando 3 proyectos.
+</p>
+
+<div class="tarjetas proyectos-grid">
+
+    <article class="tarjeta-proyecto" data-categoria="datos">
+        <img
+            src="{% static 'portafolio/img/buscador_ciudades.png' %}"
+            alt="Interfaz del Buscador de ciudades de Guatemala"
+        >
+
+        <div class="proyecto-contenido">
+            <span class="numero">01 / CONSULTA DE DATOS</span>
+
+            <h2>Buscador de ciudades</h2>
+
+            <p>
+                Página orientada a consultar ciudades de Guatemala
+                mediante un campo de búsqueda. Su interfaz plantea
+                el uso de Firebase para consultar información.
+            </p>
+
+            <ul class="tecnologias" aria-label="Tecnologías del proyecto">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>Firebase</li>
+            </ul>
+            <div class="acciones-proyecto">
+    <a
+        class="boton"
+        href="https://ctiniguar86-cmyk.github.io/buscador-ciudades/"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        Ver proyecto ↗
+    </a>
+
+    <a
+        class="boton secundario"
+        href="https://github.com/ctiniguar86-cmyk/buscador-ciudades"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        Ver código
+    </a>
+</div>
+        </div>
+    </article>
+
+    <article class="tarjeta-proyecto" data-categoria="educativo">
+        <img
+            src="{% static 'portafolio/img/voces_permanecen.png' %}"
+            alt="Página Voces que permanecen sobre diversidad lingüística"
+        >
+
+        <div class="proyecto-contenido">
+            <span class="numero">02 / EDUCATIVO</span>
+
+            <h2>Voces que permanecen</h2>
+
+            <p>
+                Proyecto académico sobre diversidad lingüística,
+                multiculturalidad y equidad en Guatemala.
+                Propone un cubo interactivo inspirado en Rubik
+                y un archivo sonoro en preparación.
+            </p>
+
+            <ul class="tecnologias" aria-label="Tecnologías del proyecto">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+            </ul>
+            <div class="acciones-proyecto">
+    <a
+        class="boton"
+        href="https://ctiniguar86-cmyk.github.io/voces-permanecen/"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        Ver proyecto ↗
+    </a>
+
+    <a
+        class="boton secundario"
+        href="https://github.com/ctiniguar86-cmyk/voces-permanecen"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        Ver código
+    </a>
+</div>
+        </div>
+    </article>
+
+    <article class="tarjeta-proyecto" data-categoria="juegos">
+    <img
+    src="{% static 'portafolio/img/totito.png' %}"
+    alt="Tablero del Juego de Totito con marcador de resultados"
+    >
+
+    <div class="proyecto-contenido">
+    <span class="numero">03 / JUEGOS</span>
+
+    <h2>Juego de Totito</h2>
+
+    <p>
+    Juego para dos personas con turnos de X y O.
+    Detecta victorias y empates, muestra un marcador
+    y permite reiniciar la partida o los resultados.
+    </p>
+
+    <ul class="tecnologias" aria-label="Tecnologías del proyecto">
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>JavaScript</li>
+    </ul>
+
+    <div class="acciones-proyecto">
+    <a
+        class="boton"
+        href="https://ctiniguar86-cmyk.github.io/voces-permanecen/"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        Ver proyecto ↗
+    </a>
+
+    <a
+        class="boton secundario"
+        href="https://github.com/ctiniguar86-cmyk/voces-permanecen"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        Ver código
+    </a>
+</div>
+    </div>
+    </article>
+
+</div>
+
+{% endblock %}
