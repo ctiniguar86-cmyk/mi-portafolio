@@ -412,81 +412,277 @@ a:focus-visible {
     }
 }
 
-/* Tarjetas de proyectos */
+/* Filtros de proyectos */
 
-.proyectos-grid {
-    align-items: stretch;
+[hidden] {
+    display: none !important;
 }
 
-.tarjeta-proyecto {
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    background: var(--tarjeta);
-    border: 1px solid rgb(23 37 84 / 12%);
-    border-radius: 18px;
-    box-shadow: 0 8px 24px rgb(23 37 84 / 5%);
-    transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.tarjeta-proyecto:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 16px 32px rgb(23 37 84 / 10%);
-}
-
-.tarjeta-proyecto > img {
-    display: block;
-    width: 100%;
-    height: 210px;
-    object-fit: contain;
-    background: var(--fondo);
-    border-bottom: 1px solid rgb(23 37 84 / 10%);
-}
-
-.proyecto-contenido {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    padding: 25px;
-}
-
-.proyecto-contenido .numero {
-    margin-bottom: 16px;
-    font-size: 11px;
-    letter-spacing: 1px;
-}
-
-.proyecto-contenido h2 {
-    margin: 0 0 16px;
-    font-size: 24px;
-}
-
-.proyecto-contenido p {
-    margin-bottom: 24px;
-    font-size: 14px;
-}
-
-.tecnologias {
+.filtros {
     display: flex;
     flex-wrap: wrap;
-    gap: 7px;
-    margin: auto 0 0;
-    padding: 0;
-    list-style: none;
+    gap: 10px;
+    margin: 28px 0 14px;
 }
 
-.tecnologias li {
-    padding: 5px 9px;
-    background: var(--fondo);
+.filtro-proyecto {
+    padding: 10px 18px;
+    border: 1px solid rgb(23 37 84 / 20%);
+    border-radius: 24px;
+    background: var(--tarjeta);
     color: var(--principal);
-    border: 1px solid rgb(23 37 84 / 10%);
-    border-radius: 6px;
-    font-size: 11px;
+    font: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.filtro-proyecto:hover {
+    border-color: var(--acento);
+    color: var(--acento);
+}
+
+.filtro-proyecto[aria-pressed="true"] {
+    background: var(--principal);
+    border-color: var(--principal);
+    color: var(--tarjeta);
+}
+
+.filtro-proyecto:focus-visible {
+    outline: 3px solid var(--acento);
+    outline-offset: 4px;
+}
+
+.resultado-filtro {
+    color: var(--texto);
+    font-size: 13px;
+}
+
+.tarjeta-proyecto[hidden] {
+    display: none !important;
+}
+
+/* Página de contacto */
+
+.contacto-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    align-items: start;
+    gap: 48px;
+    margin-top: 35px;
+}
+
+.contacto-info {
+    padding-top: 12px;
+}
+
+.contacto-info h2 {
+    margin-top: 0;
+    font-size: 32px;
+}
+
+.contacto-info .boton {
+    margin-top: 12px;
+}
+
+.formulario-contacto {
+    padding: 32px;
+    background: var(--tarjeta);
+    border: 1px solid rgb(23 37 84 / 12%);
+    border-radius: 20px;
+    box-shadow: 0 12px 30px rgb(23 37 84 / 5%);
+}
+
+.formulario-contacto h2 {
+    margin-top: 0;
+    font-size: 26px;
+}
+
+.campo {
+    margin-bottom: 20px;
+}
+
+.campo label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--principal);
+    font-size: 14px;
     font-weight: 700;
 }
 
-@media (prefers-reduced-motion: reduce) {
-    .tarjeta-proyecto {
-        transition: none;
+.campo input,
+.campo textarea {
+    display: block;
+    width: 100%;
+    padding: 13px 15px;
+    border: 1px solid rgb(23 37 84 / 25%);
+    border-radius: 9px;
+    background: var(--fondo);
+    color: var(--principal);
+    font: inherit;
+    font-size: 15px;
+}
+
+.campo textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.campo input:focus,
+.campo textarea:focus {
+    outline: 2px solid var(--principal);
+    outline-offset: 2px;
+}
+
+.campo [aria-invalid="true"] {
+    border-color: var(--acento);
+}
+
+.error-campo {
+    margin: 7px 0 0;
+    color: var(--acento);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.error-campo:empty {
+    display: none;
+}
+
+.ayuda-formulario {
+    margin: 14px 0 20px;
+    color: var(--texto);
+    font-size: 12px;
+}
+
+.formulario-contacto .boton {
+    font: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.formulario-contacto .boton:focus-visible {
+    outline: 3px solid var(--principal);
+    outline-offset: 4px;
+}
+
+.formulario-contacto .boton:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.confirmacion-contacto {
+    margin: 20px 0 0;
+    padding: 16px;
+    border-left: 4px solid var(--principal);
+    border-radius: 8px;
+    background: var(--fondo);
+    color: var(--principal);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+@media (max-width: 800px) {
+    .contacto-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
     }
+
+    .formulario-contacto {
+        padding: 24px;
+    }
+}
+
+/* Menú de navegación para celular */
+
+.boton-menu {
+    display: none;
+    padding: 10px 14px;
+    border: 1px solid rgb(23 37 84 / 25%);
+    border-radius: 9px;
+    background: var(--tarjeta);
+    color: var(--principal);
+    font: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.boton-menu:focus-visible {
+    outline: 3px solid var(--acento);
+    outline-offset: 4px;
+}
+
+@media (max-width: 800px) {
+    .barra {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .boton-menu:not([hidden]) {
+        display: inline-flex;
+        align-items: center;
+    }
+
+    .navegacion {
+        flex-basis: 100%;
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .navegacion.menu-preparado {
+        display: none;
+    }
+
+    .navegacion.menu-preparado.abierto {
+        display: flex;
+    }
+
+    .navegacion a {
+        display: block;
+        padding: 12px;
+    }
+}
+
+/* Página de error 404 */
+
+.pagina-error {
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 35px 0 70px;
+    text-align: center;
+}
+
+.numero-error {
+    margin-bottom: 20px;
+    color: var(--acento);
+    font-size: clamp(110px, 20vw, 190px);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -8px;
+}
+
+.pagina-error h1 {
+    font-size: clamp(30px, 5vw, 44px);
+}
+
+.pagina-error > p:not(.etiqueta) {
+    max-width: 550px;
+    margin: 0 auto 28px;
+    font-size: 17px;
+}
+
+.acciones-proyecto {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 24px;
+}
+
+.acciones-proyecto .boton {
+    padding: 10px 14px;
+    min-height: 44px;
+    font-size: 12px;
 }
