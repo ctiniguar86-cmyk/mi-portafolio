@@ -1,24 +1,60 @@
 {% extends "portafolio/base.html" %}
 
 {% block contenido %}
+
+<p class="etiqueta">Mis conocimientos</p>
 <h1>{{ titulo }}</h1>
 <p>{{ presentacion }}</p>
 
-<h2>Desarrollo</h2>
-<ul>
-    <li>Programación y creación de aplicaciones.</li>
-    <li>Desarrollo de páginas web.</li>
-</ul>
+<div class="tarjetas habilidades-grid">
 
-<h2>Bases de datos</h2>
-<p>Experiencia trabajando con SQL Server.</p>
+    <article class="tarjeta">
+        <span class="numero">01 / DESARROLLO</span>
+        <h2>Programación y aplicaciones</h2>
+        <p>Experiencia trabajando en aplicaciones y ejercicios de programación.</p>
+        <span class="nivel-habilidad">Intermedio</span>
+    </article>
 
-<h2>Soporte técnico</h2>
-<ul>
-    <li>Limpieza de computadoras.</li>
-    <li>Configuraciones básicas de equipos.</li>
-</ul>
+    <article class="tarjeta">
+        <span class="numero">02 / DESARROLLO WEB</span>
+        <h2>Páginas web</h2>
+        <p>Creación de páginas web con estructura, estilos e interactividad.</p>
+        <span class="nivel-habilidad">Avanzado</span>
+    </article>
 
-<h2>Seguridad electrónica</h2>
-<p>Instalación de cámaras de seguridad.</p>
+    <article class="tarjeta">
+        <span class="numero">03 / BASES DE DATOS</span>
+        <h2>SQL Server</h2>
+        <p>Experiencia trabajando con bases de datos SQL Server.</p>
+        <span class="nivel-habilidad">Intermedio</span>
+    </article>
+
+    <article class="tarjeta">
+        <span class="numero">04 / SOPORTE TÉCNICO</span>
+        <h2>Limpieza y mantenimiento</h2>
+        <p>Limpieza y cuidado de computadoras y sus componentes.</p>
+        <span class="nivel-habilidad">Avanzado</span>
+    </article>
+
+    <article class="tarjeta">
+        <span class="numero">05 / SOPORTE TÉCNICO</span>
+        <h2>Configuración de equipos</h2>
+        <p>Configuración de equipos de cómputo para su uso.</p>
+        <span class="nivel-habilidad">Avanzado</span>
+    </article>
+
+    <article class="tarjeta">
+        <span class="numero">06 / SEGURIDAD ELECTRÓNICA</span>
+        <h2>Cámaras de seguridad</h2>
+        <p>Experiencia práctica en instalación de cámaras de seguridad.</p>
+        <span class="nivel-habilidad">Intermedio</span>
+    </article>
+
+</div>
+
+<p class="nota-niveles">
+    Los niveles representan mi autoevaluación de conocimientos
+    y experiencia práctica.
+</p>
+
 {% endblock %}
