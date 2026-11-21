@@ -1,0 +1,132 @@
+{% extends "portafolio/base.html" %}
+
+{% block contenido %}
+
+<p class="etiqueta">Contacto</p>
+<h1>Conversemos</h1>
+<p>{{ presentacion }}</p>
+
+<div class="contacto-grid">
+
+<div class="datos-contacto">
+    <h3>Mis medios de contacto</h3>
+
+    <p>
+        <strong>Correo electrónico</strong>
+        <a href="mailto:ctiniguar86@gmail.com">
+            ctiniguar86@gmail.com
+        </a>
+    </p>
+
+    <p>
+        <strong>GitHub</strong>
+        <a
+            href="https://github.com/ctiniguar86-cmyk"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            Ver mi perfil de GitHub ↗
+        </a>
+    </p>
+</div>
+
+<a class="boton secundario" href="{% url 'portafolio:proyectos' %}">
+    Conocer mis proyectos
+</a>
+        <p>
+            Puedes escribirme sobre mis proyectos,
+            informática o alguna oportunidad para seguir aprendiendo.
+        </p>
+
+        <p>
+            Actualmente estudio el Técnico Universitario
+            en Informática.
+        </p>
+
+        <a class="boton secundario" href="{% url 'portafolio:proyectos' %}">
+            Conocer mis proyectos
+        </a>
+    </section>
+
+    <form id="formulario-contacto" class="formulario-contacto" novalidate>
+        <h2>Escribe un mensaje</h2>
+        <p class="ayuda-formulario">Todos los campos son obligatorios.</p>
+
+        <div class="campo">
+            <label for="nombre">Nombre</label>
+
+            <input
+                type="text"
+                id="nombre"
+                name="nombre"
+                placeholder="Tu nombre"
+                autocomplete="name"
+                maxlength="100"
+                aria-describedby="error-nombre"
+                required
+            >
+
+            <p id="error-nombre" class="error-campo"></p>
+        </div>
+
+        <div class="campo">
+            <label for="correo">Correo electrónico</label>
+
+            <input
+                type="email"
+                id="correo"
+                name="correo"
+                placeholder="nombre@correo.com"
+                autocomplete="email"
+                maxlength="254"
+                aria-describedby="error-correo"
+                required
+            >
+
+            <p id="error-correo" class="error-campo"></p>
+        </div>
+
+        <div class="campo">
+            <label for="mensaje">Mensaje</label>
+
+            <textarea
+                id="mensaje"
+                name="mensaje"
+                placeholder="Escribe tu mensaje"
+                rows="5"
+                maxlength="3000"
+                aria-describedby="error-mensaje"
+                required
+            ></textarea>
+
+            <p id="error-mensaje" class="error-campo"></p>
+        </div>
+
+        <button
+            type="submit"
+            id="boton-contacto"
+            class="boton"
+            disabled
+        >
+            Validar mensaje
+        </button>
+
+        <noscript>
+            <p>Activa JavaScript para utilizar este formulario.</p>
+        </noscript>
+
+        <p class="ayuda-formulario">
+            Formulario de demostración: no envía ni guarda mensajes.
+        </p>
+
+        <p
+            id="confirmacion-contacto"
+            class="confirmacion-contacto"
+            role="status"
+            hidden
+        ></p>
+    </form>
+
+</div>
+
+{% endblock %}

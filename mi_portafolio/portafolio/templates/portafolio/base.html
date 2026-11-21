@@ -1,0 +1,99 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{{ titulo }} | César Tomás</title>
+
+    <link
+        rel="stylesheet"
+        href="{% static 'portafolio/css/estilos.css' %}?v=3"
+    >
+</head>
+
+<body>
+    <header class="encabezado">
+        <div class="contenedor barra">
+
+            <a class="marca" href="{% url 'portafolio:inicio' %}">
+                <img
+            class="foto-perfil"
+            src="{% static 'portafolio/img/integrante-3.jpeg' %}"
+            alt="Foto de César Tomás"
+            width="48"
+             height="48"
+>
+                <span>César Tomás</span>
+            </a>
+
+            <button
+                type="button"
+                class="boton-menu"
+                id="boton-menu"
+                aria-controls="menu-principal"
+                aria-expanded="false"
+                hidden
+            >
+                ☰ Menú
+            </button>
+
+            <nav
+                class="navegacion"
+                id="menu-principal"
+                aria-label="Navegación principal"
+            >
+                <a
+                    href="{% url 'portafolio:inicio' %}"
+                    {% if titulo == "Inicio" %}class="activo"{% endif %}
+                >Inicio</a>
+
+                <a
+                    href="{% url 'portafolio:sobre_mi' %}"
+                    {% if titulo == "Sobre mí" %}class="activo"{% endif %}
+                >Sobre mí</a>
+
+                <a
+                    href="{% url 'portafolio:habilidades' %}"
+                    {% if titulo == "Habilidades" %}class="activo"{% endif %}
+                >Habilidades</a>
+
+                <a
+                    href="{% url 'portafolio:proyectos' %}"
+                    {% if titulo == "Proyectos" %}class="activo"{% endif %}
+                >Proyectos</a>
+
+                <a
+                    href="{% url 'portafolio:contacto' %}"
+                    {% if titulo == "Contacto" %}class="activo"{% endif %}
+                >Contacto</a>
+            </nav>
+
+        </div>
+    </header>
+
+    <main class="contenedor contenido">
+        {% block contenido %}
+        {% endblock %}
+    </main>
+
+    <footer class="pie">
+        <div class="contenedor pie-interior">
+            <div>
+                <strong>CT / César Tomás</strong>
+                <p>Estudiante de Técnico Universitario en Informática</p>
+            </div>
+
+            <a href="{% url 'portafolio:inicio' %}">
+                Volver al inicio ↗
+            </a>
+        </div>
+    </footer>
+
+    <script
+        src="{% static 'portafolio/js/main.js' %}?v=3"
+        defer
+    ></script>
+</body>
+</html>
